@@ -13,7 +13,11 @@ export const Router = () => {
   const auth = true
   return (
     <Routes>
-      {/* {true ? <Route path="/main" element={<App />} /> : <Route path="/" element={<Login />} />} */}
+      {/* {!loginAccount.mail ? (
+        <Route path="/main" element={<App />} />
+      ) : (
+        <Route path="/" element={<Login />} />
+      )} */}
       <Route path="/" element={<Login />} />
       <Route path="/*" element={<Navigate to="/login" />} />
     </Routes>
