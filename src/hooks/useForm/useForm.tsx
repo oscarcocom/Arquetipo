@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 
+interface FormLogin {
+  mail: string
+  password: string
+}
 export const useForm = <T extends object>(initialState: T) => {
-  const [values, setValues] = useState<T>(initialState)
+  const [values, setvalues] = useState<FormLogin>({
+    mail: '@',
+    password: ''
+  })
 
-  const reset = () => {
-    setValues(initialState)
+  const handleInputchange = (event: { target: HTMLInputElement }) => {
+    setvalues((vals) => ({
+      ...vals,
+      [event.target.name]: event.target.value
+    }))
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  return { values, handleInputChange, reset }
+  return { values, handleInputchange }
 }
