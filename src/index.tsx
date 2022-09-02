@@ -1,18 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Router } from './router/router'
-import { combineReducers, createStore } from 'redux'
-import { loginReducer } from './store/reducers/login/loginReducer'
-import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-
-const reducers = combineReducers({
-  loginReducer
-})
-const store = createStore(reducers)
+import { Provider } from 'react-redux'
+import { setupStore } from './store/store'
+import './components/templates/login/login.scss'
+const preloadedState = {}
+// Automatically create a store instance if no store was passed in
+const store = setupStore(preloadedState)
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test to register component login component received correct setFlag prop 1`] = `
+<div>
+  <div
+    class="login"
+  >
+    <div
+      class="login__header"
+    >
+      <h3>
+        Registrarse
+      </h3>
+    </div>
+    <div
+      class="login__content"
+    >
+      <pichincha-input
+        autofocus="true"
+        errorhelper="Correo es requerido"
+        idelement="Input-user"
+        label="Correo electronico"
+        min="5"
+        name="name"
+        placeholder="Ingresa tu correo"
+        size="large"
+        state="normal"
+        value=""
+      />
+      <pichincha-input
+        autofocus="true"
+        errorhelper="Correo es requerido"
+        idelement="Input-user"
+        label="Contraseña contraseña"
+        min="5"
+        name="number"
+        placeholder="Ingresa tu contraseña"
+        size="large"
+        state="normal"
+        value=""
+      />
+      <pichincha-input
+        autofocus="true"
+        errorhelper="Correo es requerido"
+        idelement="Input-user"
+        label="Contraseña contraseña"
+        min="5"
+        name="mail"
+        placeholder="Ingresa tu contraseña"
+        size="large"
+        state="normal"
+        value=""
+      />
+      <pichincha-input
+        autofocus="true"
+        errorhelper="Correo es requerido"
+        idelement="Input-user"
+        label="Contraseña contraseña"
+        min="5"
+        name="pass"
+        placeholder="Ingresa tu contraseña"
+        size="large"
+        state="normal"
+        value=""
+      />
+    </div>
+    <div
+      class="login__footer"
+    >
+      <a
+        href="#"
+      >
+        Iniciar Sesión
+      </a>
+      <pichincha-button
+        classname="login__footer--Button"
+        idelement="StartSesion"
+        size="small"
+        value="Registrar"
+      >
+        Registrar
+      </pichincha-button>
+    </div>
+  </div>
+</div>
+`;

@@ -30,6 +30,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
 
   return (
     <pichincha-button
+      className={'login__footer--Button'}
       ref={buttonRef}
       color={props.color}
       disabled={props.disabled}
@@ -43,6 +44,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
       size={props.size}
       tabIndexNumber={props.tabIndexNumber}
       value={props.children}
+      role={"button"}
     >
       {props.children}
     </pichincha-button>

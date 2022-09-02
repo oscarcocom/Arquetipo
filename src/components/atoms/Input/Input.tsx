@@ -14,13 +14,15 @@ interface InputProps {
   state: InputStatus
   tooltip?: string
   value: string
-  nameElement: string
+  name: string
+  className?: string
   eventToChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input: FC<InputProps> = (props: InputProps) => {
   return (
     <pichincha-input
+      className={props.className}
       autofocus={props.autofocus}
       errorHelper={props.errorHelper}
       idElement={props.idElement}
@@ -31,7 +33,7 @@ export const Input: FC<InputProps> = (props: InputProps) => {
       state={props.state}
       tooltip={props.tooltip}
       value={props.value}
-      nameElement={props.nameElement}
+      name={props.name}
       ichange={props.eventToChange}
     />
   )

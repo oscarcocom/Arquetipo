@@ -1,25 +1,30 @@
-import React from 'react'
+import { CONNREFUSED } from 'dns'
 import { shallowEqual, useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { Login } from '../components/organism/Login/login'
+import { Loginform } from '../components/templates/login/login-form'
+import { MainLayout } from '../components/layout/'
 import App from '../App'
-import { Login } from '../components/atoms/Login/login'
+import { Register } from '../components/organism/Register/register'
+import { useLogin } from '../components/organism/Login/use-login/use-login'
 
 interface LoginUser {
-  loginReducer: any
+  user: { mail: string; pass: string }
 }
 export const Router = () => {
-  const loginAccount = useSelector((store: LoginUser) => store.loginReducer, shallowEqual)
-  console.log(loginAccount)
-  const auth = true
+  const loginAccount = useSelector((store: LoginUser) => store.user, shallowEqual)
+  console.log(loginAccount.mail)
+
   return (
+    // <MainLayout>
     <Routes>
-      {/* {!loginAccount.mail ? (
-        <Route path="/main" element={<App />} />
+      {!!loginAccount.mail ? (
+        <Route path="/*" element={<Loginform />} />
       ) : (
-        <Route path="/" element={<Login />} />
-      )} */}
-      <Route path="/" element={<Login />} />
-      <Route path="/*" element={<Navigate to="/login" />} />
+        <Route path="/*" element={<App />} />
+      )}
+      <Route path="/*" element={<Navigate to="/" />} />
     </Routes>
+    // </MainLayout>
   )
 }

@@ -1,7 +1,7 @@
-import React from 'react'
+
 import './App.css'
 import { Button } from './components/atoms/Button/Button'
-import { Login } from './components/atoms/Login/login'
+
 
 function App() {
   return (
