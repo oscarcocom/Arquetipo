@@ -1,22 +1,24 @@
 import { FC } from 'react'
-import { useForm } from '../../../hooks/useForm/use-form/use-form'
+import { Link } from 'react-router-dom'
 import { Button } from '../../atoms/Button/Button'
 import { Input } from '../../atoms/Input/Input'
 import { useLogin } from '../Login/use-login/use-login'
 
-interface Props {
-  onSubmmit: (mail: string, pass: string) => void
-  mailError: string | null
-  passError: string | null
-}
+// interface Props {
+//   onSubmmit: (mail: string, pass: string) => void
+//   mailError: string | null
+//   passError: string | null
+// }
 
-export const Register: FC<Props> = ({ onSubmmit, mailError, passError }) => {
-  const {values, handleInputchange } = useLogin({
+export const Register: FC = () => {
+  const {values, handleInputchange,toRegiter } = useLogin({
     name: '',
-    number: '',
+    number: 0,
     mail: '',
     pass: ''
   })
+
+  
   return (
     <div className="login">
       <div className="login__header">
@@ -78,10 +80,12 @@ export const Register: FC<Props> = ({ onSubmmit, mailError, passError }) => {
       </div>
 
       <div className="login__footer">
-        <a   href="#">
-          Iniciar Sesión
-        </a>
-        <Button onClick={() => onSubmmit(values.mail, values.pass)} idelement={'StartSesion'} children={'Registrar'} size={'small'} />
+
+      <Link role="redirect" to="/">
+          <span className="login__footer--action">Iniciar seseón</span>
+        </Link>
+      
+        <Button onClick={() => toRegiter(values.mail, values.pass, values.number, values.name)} idelement={'StartSesion'} children={'Registrar'} size={'small'} />
       </div>
     </div>
   )

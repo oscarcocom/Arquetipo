@@ -1,0 +1,20 @@
+.login__alert-container{
+ width: auto;
+ height: auto;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ display:flex;
+ background-color:rgb(245 10 10 / 26%);
+ flex-direction: column;
+ 
+ 
+}
+.login__span--color{
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+    width: auto;
+    height: 5px;
+    margin-bottom: 2vh;
+}   

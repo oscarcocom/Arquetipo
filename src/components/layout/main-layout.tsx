@@ -1,14 +1,16 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 
 // interface Props{
 //     children :React.ReactNode;
 // }
 
-export const MainLayout:FC = () => {
+export const MainLayout: FC = () => {
   return (
-    <div className='layout'>
-     <Outlet/>
+    <div className="layout">
+      <div className="container">
+        <Outlet />
+      </div>
     </div>
   )
 }

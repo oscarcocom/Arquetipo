@@ -1,26 +1,40 @@
 import { useEffect, useState } from 'react'
-import { useForm } from '../../../../hooks/useForm/use-form/use-form'
+import { useForm } from '../../../../hooks/useForm/use-form'
 
 export const useLogin = <T extends object>(initialState: T) => {
   const [mailError, setMail] = useState<string | null>(null)
   const [passError, setPass] = useState<string | null>(null)
-  const { values, handleInputchange } = useForm(initialState)
+  const { values, handleInputchange,setValues } = useForm(initialState)
 
   const handlerMail = (value: string) => {
-    if (!value) setMail('Mail not found')
+    if (!value) {
+      setMail('Mail not found')
+       return;
+    }
+    
   }
   const handlerPass = (value: string) => {
-    if (!value) setPass('passError not found')
+    if (!value) {
+      setPass('passError not found')
+      return;
+    }
   }
 
   const toLogin = (mail: string, pass: string) => {
     handlerMail(mail)
     handlerPass(pass)
+   
+     
+
+    //api solved
+    //
   }
 
-  const toRegiter = (mail: string, pass: string) => {
+  const toRegiter = (mail: string, pass: string, number: number, name:string) => {
     handlerMail(mail)
     handlerPass(pass)
+    //api solved
+    //
   }
 
   return {
@@ -29,6 +43,7 @@ export const useLogin = <T extends object>(initialState: T) => {
     values,
     handleInputchange,
     toLogin,
-    toRegiter
+    toRegiter,
+    setValues
   }
 }

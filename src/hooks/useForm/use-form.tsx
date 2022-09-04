@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const useForm = <T extends object>(initialState: T) => {
   const [values, setValues] = useState(initialState);
@@ -14,5 +14,5 @@ export const useForm = <T extends object>(initialState: T) => {
       ...initialState
     }))
   }
-  return { values, handleInputchange, reset }
+  return { values,setValues, handleInputchange, reset }
 }
