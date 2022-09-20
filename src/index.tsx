@@ -6,7 +6,7 @@ import { Router } from './router/router'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { setupStore } from './store/store'
-import './components/templates/login/login.scss'
+
 const preloadedState = {}
 // Automatically create a store instance if no store was passed in
 const store = setupStore(preloadedState)

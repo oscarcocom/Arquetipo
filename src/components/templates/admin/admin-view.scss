@@ -1,0 +1,151 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 9% 29% 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'container__nav container__nav container__nav'
+    'container__actions container__actions container__actions'
+    'container__main container__main container__main';
+
+}
+
+.container__nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2% 0%;
+  grid-auto-flow: row;
+  grid-template-areas: 'container__nav-title container__nav-user';
+  grid-area: container__nav;
+  background-color:#afaaaabd;
+}
+
+.container__nav-title {
+  grid-area: container__nav-title;
+  justify-content: center;
+
+  &__h1-text--weigh {
+    font-weight: 200;
+    padding-left: 4vw;
+    width: auto;
+  }
+}
+
+.container__nav-user {
+  grid-area: container__nav-user;
+  display: flex;
+  justify-content: end;
+
+  &__h1-name-user--weigh {
+    padding-right: 4vw;
+    font-weight: 700;
+    width: auto;
+    
+  }
+}
+
+.container__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-area: container__actions;
+
+&__head{
+  display: flex;
+  
+  &__title{
+    
+
+    &__h2--width{
+      padding-left: 4%;
+    }
+  }
+
+  &__button-add{
+
+
+   &--sizen{
+     display: inline-block;
+     width: 40%;
+     padding-right: 5%;
+   }
+  }
+
+ }
+  
+}
+
+
+
+
+.container__action-head {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.container__action-body {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.container__action-head__title {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.container__action-head__button-add {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex ;
+  justify-content: end; 
+  align-items: center;  
+  
+}
+
+.container__action-body__input-search {
+  grid-area: 2 / 1 / 3 / 2;
+  display: flex ;
+  justify-content:left; 
+  align-items: center;  
+  
+
+  &--width{
+    width: 15vw;
+    padding-left: 4%;
+  }
+}
+
+.container__action-body__select-filter {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex ;
+  justify-content:right; 
+  align-items: center;  
+  
+  &__options{
+    width: 20vw;
+     padding-right: 5%;
+  }
+}
+
+.container__main {
+  grid-area: container__main;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 186px);
+  height: auto;
+  
+  // background-color: aqua;
+ &__body{
+   display: flex;
+   padding: 20px;
+  
+   &__card{
+    border: 20px;
+   }
+   
+ 
+  }
+
+}

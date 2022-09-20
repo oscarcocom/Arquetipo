@@ -12,6 +12,11 @@ export interface User {
   token: string
 }
 
+export interface createUser {
+  status: string;
+  id:     string;
+}
+
 export class UserService {
   static async getUsers() {
     const response = await axios.get<User[]>(API_URL)

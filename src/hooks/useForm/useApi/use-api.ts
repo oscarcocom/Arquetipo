@@ -9,7 +9,7 @@ export const useGetGlobal = ( key:any, interval:boolean ) => {
     return resp
   }
 
-  const Activeinterval = interval ? { refreshInterval: 1000 } : (null as any)
+  const Activeinterval = interval ? { refreshInterval: 2000 } : (null as any)
   const { data, error } = useSWR(key, fetcher, Activeinterval)
 
   return {

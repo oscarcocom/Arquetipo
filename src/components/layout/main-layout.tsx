@@ -7,10 +7,8 @@ import { Outlet } from 'react-router-dom'
 
 export const MainLayout: FC = () => {
   return (
-    <div className="layout">
-      <div className="container">
-        <Outlet />
-      </div>
-    </div>
+    <>
+      <Outlet />
+    </>
   )
 }

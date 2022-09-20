@@ -6,6 +6,7 @@ export type IconType = '--outlined' | '--round' | '--sharp' | '--two-tone'
 
 export type ButtonSize = 'extra-large' | 'large' | 'medium' | 'small'
 
+
 export interface ButtonProps {
   color?: ButtonColor
   disabled?: boolean
@@ -26,11 +27,17 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const buttonRef = useRef<any>()
   useEffect(() => {
     buttonRef.current?.addEventListener('clickbutton', props.onClick)
-  })
+
+    return ()=>{
+      //  buttonRef.current?.remove.EventListener('clickbutton', props.onClick);
+    
+    }
+  }
+  )
+ 
 
   return (
     <pichincha-button
-      className={'login__footer--Button'}
       ref={buttonRef}
       color={props.color}
       disabled={props.disabled}
@@ -44,7 +51,8 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
       size={props.size}
       tabIndexNumber={props.tabIndexNumber}
       value={props.children}
-      role={"button"}
+      role={'button'}
+      type={'button'}
     >
       {props.children}
     </pichincha-button>

@@ -17,6 +17,10 @@ interface InputProps {
   name: string
   className?: string
   eventToChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  autoComplete?:boolean
+  type?:string,
+  hidePasswordText?: 'OCULTAR',
+  
 }
 
 export const Input: FC<InputProps> = (props: InputProps) => {
@@ -36,7 +40,6 @@ export const Input: FC<InputProps> = (props: InputProps) => {
     }
   }, [InputRef])
 
-  console.log(InputRef)
   return (
     <pichincha-input
       ref={InputRef}
@@ -54,6 +57,11 @@ export const Input: FC<InputProps> = (props: InputProps) => {
       show-icon-status={true}
       full-width={true}
       error-helper={props.errorHelper}
+      autoComplete={props.autoComplete}
+      hide-password-text={props.hidePasswordText}
+      type={props.type}
+      
+      // type={'radio'}
       // filter-regex='/[A-Z]/'
     
       

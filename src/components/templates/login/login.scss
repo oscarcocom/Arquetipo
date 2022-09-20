@@ -1,4 +1,6 @@
-.container {
+
+
+.contain {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +12,7 @@
 .login {
   display: block;
   justify-content: center;
-  width: 15%;
+  width: auto;
   height: auto;
   align-items: center;
   border: 0.9px solid black;
@@ -30,13 +32,16 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+
+    &-input{
+      display:block;
+      padding: 0% 0% 03%;
+      width: 350px;
+  
+   
   }
    
-  &__input{
-    display:block;
-    padding: 0% 0% 7%;
-    width: auto;
- 
+
    
 
   }
@@ -53,7 +58,7 @@
     }
 
     &--Button {
-      width: 72%;
+      width: 40%;
     }
   }
 }
